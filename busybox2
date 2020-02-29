@@ -1,0 +1,17 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: busybox2
+spec:
+  containers:
+  - name: busybox-cnt02
+    image: busybox
+    command: ["/bin/sh"]
+    args: ["-c", "while true; do echo hello from cnt01; sleep 100;done"]
+    resources:
+      requests:
+        memory: "300Mi"
+        cpu: "300m"
+      limits:
+        memory: "800Mi"
+        cpu: "1200m"
